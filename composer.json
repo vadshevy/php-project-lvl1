@@ -4,9 +4,12 @@
     "type": "project",
     "authors": [
         {
-            "name": "Vadim Shevyakin",
+            "name": "seniorraccoon",
             "email": "shevyakin.vadim@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+      ]
 }
