@@ -1,0 +1,12 @@
+{
+    "name": "vadshevy/hexlet-prj-1",
+    "description": "hexlet project level 1",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Vadim Shevyakin",
+            "email": "shevyakin.vadim@gmail.com"
+        }
+    ],
+    "require": {}
+}
