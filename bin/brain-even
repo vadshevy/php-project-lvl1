@@ -10,4 +10,5 @@ if (file_exists($autoloadPath1)) {
 }
 
 echo "Welcome to the Brain Games!\n";
-BrainGames\Cli\run();
+echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
+BrainGames\Engine\engine('even');
