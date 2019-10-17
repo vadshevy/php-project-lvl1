@@ -12,13 +12,13 @@ function generateCalcData()
     $operatorsAvailable = array('+','-','*');
     $operator = $operatorsAvailable[array_rand($operatorsAvailable)];
     $question = "{$operand1}{$operator}{$operand2}";
-    switch($operator){
+    switch ($operator) {
         case "+":
             $expectedAnswer = (string)($operand1 + $operand2);
-        break;
+            break;
         case "-":
             $expectedAnswer = (string)($operand1 - $operand2);
-        break;
+            break;
         case "*":
             $expectedAnswer = (string)($operand1 * $operand2);
     }
