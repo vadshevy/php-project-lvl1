@@ -26,6 +26,7 @@ function engine($game)
             $correctAnswers += 1;
         } else {
             line("$answer is wrong answer, correct answer was $expectedAnswer");
+            line("Let's try again, $name");
             $correctAnswers = 0;
         }
     }
