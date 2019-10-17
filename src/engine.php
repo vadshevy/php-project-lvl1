@@ -3,6 +3,7 @@
 namespace BrainGames\Engine;
 
 use function BrainGames\Even\generateEvenData;
+use function BrainGames\Calc\generateCalcData;
 use function cli\line;
 use function cli\prompt;
 
@@ -14,6 +15,9 @@ function engine($game)
     while ($correctAnswers < 3) {
         if ($game === 'even') {
             [$question,$expectedAnswer] = generateEvenData();
+        }
+        if ($game === 'calc') {
+            [$question,$expectedAnswer] = generateCalcData();
         }
         line("Question:%s", $question);
         $answer = prompt("Your answer");
