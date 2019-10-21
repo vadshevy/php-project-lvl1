@@ -20,6 +20,9 @@ function engine($game)
         if ($game === 'calc') {
             [$question,$expectedAnswer] = generateCalcData();
         }
+        if ($game === 'gcd') {
+            [$question,$expectedAnswer] = generateGCDData();
+        }
         line("Question:%s", $question);
         $answer = prompt("Your answer");
         if ($answer === $expectedAnswer) {
