@@ -4,6 +4,7 @@ namespace BrainGames\Engine;
 
 use function BrainGames\Even\generateEvenData;
 use function BrainGames\Calc\generateCalcData;
+use function BrainGames\Calc\generateGCDData;
 use function cli\line;
 use function cli\prompt;
 

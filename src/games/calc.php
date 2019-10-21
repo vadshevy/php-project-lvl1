@@ -2,9 +2,6 @@
 
 namespace BrainGames\Calc;
 
-use function cli\line;
-use function cli\prompt;
-
 function generateCalcData()
 {
     $operand1 = rand(1, 100);
