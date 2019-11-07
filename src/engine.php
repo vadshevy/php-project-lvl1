@@ -6,6 +6,7 @@ use function BrainGames\Even\generateEvenData;
 use function BrainGames\Calc\generateCalcData;
 use function BrainGames\GCD\generateGCDData;
 use function BrainGames\Progression\generateProgressionData;
+use function BrainGames\Prime\generatePrimeData;
 use function cli\line;
 use function cli\prompt;
 
@@ -26,6 +27,9 @@ function engine($game)
         }
         if ($game === 'progression') {
             [$question,$expectedAnswer] = generateProgressionData();
+        }
+        if ($game === 'prime') {
+            [$question,$expectedAnswer] = generatePrimeData();
         }
         line("Question:%s", $question);
         $answer = prompt("Your answer");
