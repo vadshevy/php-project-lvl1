@@ -4,7 +4,8 @@ namespace BrainGames\Engine;
 
 use function BrainGames\Even\generateEvenData;
 use function BrainGames\Calc\generateCalcData;
-use function BrainGames\Calc\generateGCDData;
+use function BrainGames\GCD\generateGCDData;
+use function BrainGames\Progression\generateProgressionData;
 use function cli\line;
 use function cli\prompt;
 
@@ -22,6 +23,9 @@ function engine($game)
         }
         if ($game === 'gcd') {
             [$question,$expectedAnswer] = generateGCDData();
+        }
+        if ($game === 'progression') {
+            [$question,$expectedAnswer] = generateProgressionData();
         }
         line("Question:%s", $question);
         $answer = prompt("Your answer");

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\GCD;
 
 function generateGCDData()
 {
