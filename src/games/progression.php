@@ -5,8 +5,8 @@ namespace BrainGames\Progression;
 function generateProgressionData()
 {
     $progressionLength = 10;
-    $progressionStep = rand(0, 10);
-    $progressionStart = rand(0, 10);
+    $progressionStep = rand(1, 10);
+    $progressionStart = rand(1, 10);
     $progressionEnd = $progressionStart + $progressionStep * ($progressionLength - 1);
     $progressionSkippedPosition = rand(0, 9);
     $array = range($progressionStart, $progressionEnd, $progressionStep);
