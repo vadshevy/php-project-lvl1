@@ -10,5 +10,5 @@ if (file_exists($autoloadPath1)) {
 }
 
 echo "Welcome to the Brain Games!\n";
-echo "Find the greatest common divisor of given numbers.";
+echo "Find the greatest common divisor of given numbers.\n";
 BrainGames\Engine\engine('gcd');
