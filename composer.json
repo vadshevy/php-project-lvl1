@@ -1,7 +1,7 @@
 {
     "name": "vadshevy/hexlet-prj-1",
     "description": "hexlet project level 1",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "type": "project",
     "authors": [
         {
