@@ -9,6 +9,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-echo "Welcome to the Brain Games!\n";
-echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
-BrainGames\Engine\engine('even');
+#echo "Welcome to the Brain Games!\n";
+#echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
+BrainGames\Even\generateEvenData();
