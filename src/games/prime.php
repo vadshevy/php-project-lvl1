@@ -1,12 +1,34 @@
 <?php
 
 namespace BrainGames\Prime;
+use function BrainGames\Engine\engine;
+
+function runPrimeGame()
+{
+    echo "Welcome to the Brain Games!\n";
+    echo "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
+    engine(generatePrimeData());
+}
+
+function isPrime($num)
+{
+    for ($i = 2; $i <= $num / 2; $i++) {
+        if ($num % $i === 0) {
+            return "no";
+        }
+    }
+    return "yes";
+}
 
 function generatePrimeData()
 {
-    $question = rand(2, 100);
-    $primeNumbers = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
-    $expectedAnswer = in_array($question, $primeNumbers) ? "yes" : "no";
-    $result = [$question,$expectedAnswer];
+    $rounds = 3;
+    $result = [];
+    for ($i = 0; $i <= $rounds; $i++) {
+        $question = rand(2, 100);
+        $expectedAnswer = isPrime($question);
+        $result[] = $expectedAnswer;
+        $result[] = $question;
+    }
     return $result;
 }

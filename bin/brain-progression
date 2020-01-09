@@ -9,6 +9,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-echo "Welcome to the Brain Games!\n";
-echo "What number is missing in the progression?\n";
-BrainGames\Engine\engine('progression');
+BrainGames\Progression\runProgressionGame();
