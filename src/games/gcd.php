@@ -1,6 +1,7 @@
 <?php
 
 namespace BrainGames\GCD;
+
 use function BrainGames\Engine\engine;
 
 function runGCDGame()
@@ -10,7 +11,7 @@ function runGCDGame()
     engine(generateGCDData());
 }
 
-function getGreatestCommonDivisor($num1,$num2)
+function getGreatestCommonDivisor($num1, $num2)
 {
     while ($num1 != $num2) {
         if ($num1 > $num2) {
@@ -31,7 +32,7 @@ function generateGCDData()
         $num1 = rand(1, 100);
         $num2 = rand(1, 100);
         $question = "{$num1} {$num2}";
-        $expectedAnswer = getGreatestCommonDivisor($num1,$num2);
+        $expectedAnswer = getGreatestCommonDivisor($num1, $num2);
         $result[] = $expectedAnswer;
         $result[] = $question;
     }

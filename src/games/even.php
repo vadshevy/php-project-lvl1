@@ -1,6 +1,7 @@
 <?php
 
 namespace BrainGames\Even;
+
 use function BrainGames\Engine\engine;
 
 function runEvenGame()
@@ -16,10 +17,10 @@ function generateEvenData()
     $result = [];
 
     for ($i = 0; $i <= $rounds; $i++) {
-    $question = rand(1, 100);
-    $expectedAnswer = $question % 2 ? 'no' : 'yes';
-    $result[] = $expectedAnswer;
-    $result[] = $question;
+        $question = rand(1, 100);
+        $expectedAnswer = $question % 2 ? 'no' : 'yes';
+        $result[] = $expectedAnswer;
+        $result[] = $question;
     }
     return $result;
 }

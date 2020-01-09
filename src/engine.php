@@ -1,13 +1,7 @@
 <?php
 
 namespace BrainGames\Engine;
-/*
-use function BrainGames\Even\generateEvenData;
-use function BrainGames\Calc\generateCalcData;
-use function BrainGames\GCD\generateGCDData;
-use function BrainGames\Progression\generateProgressionData;
-use function BrainGames\Prime\generatePrimeData;
-*/
+
 use function cli\line;
 use function cli\prompt;
 

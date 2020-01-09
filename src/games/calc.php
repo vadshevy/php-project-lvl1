@@ -1,6 +1,7 @@
 <?php
 
 namespace BrainGames\Calc;
+
 use function BrainGames\Engine\engine;
 
 function runCalcGame()
@@ -33,6 +34,6 @@ function generateCalcData()
     
         $result[] = $expectedAnswer;
         $result[] = $question;
-    }    
+    }
     return $result;
 }
