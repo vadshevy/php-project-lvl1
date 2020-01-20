@@ -6,16 +6,8 @@ use function BrainGames\Engine\engine;
 
 function runCalcGame()
 {
-    echo "Welcome to the Brain Games!\n";
-    echo "What is the result of the expression?\n";
-    engine(generateCalcData());
-}
-
-function generateCalcData()
-{
-    $rounds = 3;
-    $result = [];
-    for ($i = 0; $i <= $rounds; $i++) {
+    $generateCalcData = function () {
+        $result = [];
         $operand1 = rand(1, 100);
         $operand2 = rand(1, 100);
         $operatorsAvailable = array('+','-','*');
@@ -31,9 +23,11 @@ function generateCalcData()
             case "*":
                 $expectedAnswer = (string)($operand1 * $operand2);
         }
-    
-        $result[] = $expectedAnswer;
         $result[] = $question;
-    }
-    return $result;
+        $result[] = $expectedAnswer;
+        return $result;
+    };
+
+    $intro = "What is the result of the expression?\n";
+    engine($generateCalcData, $intro);
 }

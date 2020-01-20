@@ -5,14 +5,17 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function engine($gameData)
+function engine($gameData, $intro)
 {
+    $greeting = "Welcome to the Brain Games!\n";
+    print_r($greeting);
+    print_r($intro);
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     $correctAnswers = 0;
-    while ($correctAnswers < 3) {
-        $question = array_pop($gameData);
-        $expectedAnswer = array_pop($gameData);
+    $rounds = 3;
+    for ($i = 1; $i <= $rounds; $i++) {
+        [$question, $expectedAnswer] = $gameData();
         line("Question:%s", $question);
         $answer = prompt("Your answer");
         if ($answer === $expectedAnswer) {
@@ -24,4 +27,5 @@ function engine($gameData)
             return;
         }
     }
+    line("Congratulations, %s!", $name);
 }

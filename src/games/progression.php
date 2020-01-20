@@ -6,29 +6,22 @@ use function BrainGames\Engine\engine;
 
 function runProgressionGame()
 {
-    echo "Welcome to the Brain Games!\n";
-    echo "What number is missing in the progression?\n";
-    engine(generateProgressionData());
-}
-
-
-
-function generateProgressionData()
-{
-    $rounds = 3;
-    $result = [];
-    for ($i = 0; $i <= $rounds; $i++) {
+    $generateProgressionData = function () {
+        $result = [];
         $progressionLength = 10;
         $progressionStep = rand(1, 10);
         $progressionStart = rand(1, 10);
         $progressionEnd = $progressionStart + $progressionStep * ($progressionLength - 1);
         $progressionSkippedPosition = rand(0, $progressionLength - 1);
-        $array = range($progressionStart, $progressionEnd, $progressionStep);
-        $expectedAnswer = (string)$array[$progressionSkippedPosition];
-        $array[$progressionSkippedPosition] = "...";
-        $question = implode(" ", $array);
-        $result[] = $expectedAnswer;
+        $progression = range($progressionStart, $progressionEnd, $progressionStep);
+        $expectedAnswer = (string)$progression[$progressionSkippedPosition];
+        $progression[$progressionSkippedPosition] = "...";
+        $question = implode(" ", $progression);
         $result[] = $question;
-    }
-    return $result;
+        $result[] = $expectedAnswer;
+        return $result;
+    };
+
+    $intro =  "What number is missing in the progression?\n";
+    engine($generateProgressionData, $intro);
 }

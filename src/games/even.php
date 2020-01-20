@@ -6,25 +6,20 @@ use function BrainGames\Engine\engine;
 
 function runEvenGame()
 {
-    echo "Welcome to the Brain Games!\n";
-    echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
-    engine(generateEvenData());
-}
-
-function generateEvenData()
-{
     function isEven($num)
     {
-        return $num % 2 ? 'no' : 'yes';
+        return $num % 2 ? false : true;
     }
 
-    $rounds = 3;
-    $result = [];
-    for ($i = 0; $i <= $rounds; $i++) {
+    $generateEvenData = function () {
+        $result = [];
         $question = rand(1, 100);
-        $expectedAnswer = isEven($question);
-        $result[] = $expectedAnswer;
+        $expectedAnswer = isEven($question) ? 'yes' : 'no';
         $result[] = $question;
-    }
-    return $result;
+        $result[] = $expectedAnswer;
+        return $result;
+    };
+
+    $intro = "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
+    engine($generateEvenData, $intro);
 }
