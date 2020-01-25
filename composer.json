@@ -3,6 +3,7 @@
     "description": "hexlet project level 1",
     "minimum-stability": "dev",
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "seniorraccoon",

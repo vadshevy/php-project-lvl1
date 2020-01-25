@@ -1,24 +1,24 @@
 <?php
 
-namespace BrainGames\GCD;
+namespace braingames\gcd;
 
-use function BrainGames\Engine\engine;
+use function braingames\engine\engine;
+
+function getGreatestCommonDivisor($num1, $num2)
+{
+    while ($num1 != $num2) {
+        if ($num1 > $num2) {
+            $num1 = $num1 - $num2;
+        } else {
+            $num2 = $num2 - $num1;
+        }
+    }
+    $result = $num1;
+    return $result;
+}
 
 function runGCDGame()
 {
-    function getGreatestCommonDivisor($num1, $num2)
-    {
-        while ($num1 != $num2) {
-            if ($num1 > $num2) {
-                $num1 = $num1 - $num2;
-            } else {
-                $num2 = $num2 - $num1;
-            }
-        }
-        $expectedAnswer = (string)$num1;
-        return $expectedAnswer;
-    }
-
     $generateGCDData = function () {
         $result = [];
         $num1 = rand(2, 100);
@@ -30,6 +30,6 @@ function runGCDGame()
         return $result;
     };
 
-    $intro = "Find the greatest common divisor of given numbers.\n";
+    $intro = "Find the greatest common divisor of given numbers.";
     engine($generateGCDData, $intro);
 }

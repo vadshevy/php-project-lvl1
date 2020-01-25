@@ -1,23 +1,22 @@
 <?php
 
-namespace BrainGames\Engine;
+namespace braingames\engine;
 
 use function cli\line;
 use function cli\prompt;
 
 function engine($gameData, $intro)
 {
-    $greeting = "Welcome to the Brain Games!\n";
-    print_r($greeting);
-    print_r($intro);
-    $name = prompt('May I have your name?');
+    line("Welcome to the Brain Games!");
+    line($intro);
+    $name = prompt("May I have your name?");
     line("Hello, %s!", $name);
-    $rounds = 3;
-    for ($i = 1; $i <= $rounds; $i++) {
+    $roundsCount = 3;
+    for ($i = 1; $i <= $roundsCount; $i++) {
         [$question, $expectedAnswer] = $gameData();
         line("Question:%s", $question);
         $answer = prompt("Your answer");
-        if ($answer === $expectedAnswer) {
+        if ($answer === (string)$expectedAnswer) {
             line("Correct!");
         } else {
             line("$answer is wrong answer, correct answer was $expectedAnswer");

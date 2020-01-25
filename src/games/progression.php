@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Progression;
+namespace braingames\progression;
 
-use function BrainGames\Engine\engine;
+use function braingames\engine\engine;
 
 function runProgressionGame()
 {
@@ -14,7 +14,7 @@ function runProgressionGame()
         $progressionEnd = $progressionStart + $progressionStep * ($progressionLength - 1);
         $progressionSkippedPosition = rand(0, $progressionLength - 1);
         $progression = range($progressionStart, $progressionEnd, $progressionStep);
-        $expectedAnswer = (string)$progression[$progressionSkippedPosition];
+        $expectedAnswer = $progression[$progressionSkippedPosition];
         $progression[$progressionSkippedPosition] = "...";
         $question = implode(" ", $progression);
         $result[] = $question;
@@ -22,6 +22,6 @@ function runProgressionGame()
         return $result;
     };
 
-    $intro =  "What number is missing in the progression?\n";
+    $intro =  "What number is missing in the progression?";
     engine($generateProgressionData, $intro);
 }

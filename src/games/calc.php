@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace braingames\calc;
 
-use function BrainGames\Engine\engine;
+use function braingames\engine\engine;
 
 function runCalcGame()
 {
@@ -10,24 +10,24 @@ function runCalcGame()
         $result = [];
         $operand1 = rand(1, 100);
         $operand2 = rand(1, 100);
-        $operatorsAvailable = array('+','-','*');
-        $operator = $operatorsAvailable[array_rand($operatorsAvailable)];
+        $operators = ["+","-","*"];
+        $operator = $operators[array_rand($operators)];
         $question = "{$operand1}{$operator}{$operand2}";
         switch ($operator) {
-            case "+":
-                $expectedAnswer = (string)($operand1 + $operand2);
+            case '+':
+                $expectedAnswer = ($operand1 + $operand2);
                 break;
-            case "-":
-                $expectedAnswer = (string)($operand1 - $operand2);
+            case '-':
+                $expectedAnswer = ($operand1 - $operand2);
                 break;
-            case "*":
-                $expectedAnswer = (string)($operand1 * $operand2);
+            case '*':
+                $expectedAnswer = ($operand1 * $operand2);
         }
         $result[] = $question;
         $result[] = $expectedAnswer;
         return $result;
     };
 
-    $intro = "What is the result of the expression?\n";
+    $intro = "What is the result of the expression?";
     engine($generateCalcData, $intro);
 }
