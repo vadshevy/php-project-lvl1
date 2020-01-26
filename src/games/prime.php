@@ -1,8 +1,8 @@
 <?php
 
-namespace braingames\prime;
+namespace BrainGames\prime;
 
-use function braingames\engine\engine;
+use function BrainGames\engine\engine;
 
 function isPrime($num)
 {

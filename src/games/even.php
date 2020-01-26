@@ -1,8 +1,8 @@
 <?php
 
-namespace braingames\even;
+namespace BrainGames\even;
 
-use function braingames\engine\engine;
+use function BrainGames\engine\engine;
 
 function isEven($num)
 {

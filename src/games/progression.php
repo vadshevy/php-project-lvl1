@@ -1,8 +1,8 @@
 <?php
 
-namespace braingames\progression;
+namespace BrainGames\progression;
 
-use function braingames\engine\engine;
+use function BrainGames\engine\engine;
 
 function runProgressionGame()
 {

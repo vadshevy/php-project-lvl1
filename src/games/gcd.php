@@ -1,8 +1,8 @@
 <?php
 
-namespace braingames\gcd;
+namespace BrainGames\gcd;
 
-use function braingames\engine\engine;
+use function BrainGames\engine\engine;
 
 function getGreatestCommonDivisor($num1, $num2)
 {
