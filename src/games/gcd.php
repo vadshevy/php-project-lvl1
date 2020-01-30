@@ -13,8 +13,7 @@ function getGreatestCommonDivisor($num1, $num2)
             $num2 = $num2 - $num1;
         }
     }
-    $result = $num1;
-    return $result;
+    return $num1;
 }
 
 function runGCDGame()
